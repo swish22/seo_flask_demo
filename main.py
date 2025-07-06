@@ -27,6 +27,11 @@ def register():
         return redirect(url_for('home')) # if so - send to home page
     return render_template('register.html', title='Register', form=form)
 
+# about page
+@app.route("/about")
+def about():
+    return render_template('about.html', title ='About Page', subtitle='Learn about this site!', text='This is the about page')
+
 # auto-update logic
 @app.route("/update_server", methods=['POST'])
 def webhook():
